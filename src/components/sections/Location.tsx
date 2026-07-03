@@ -31,11 +31,11 @@ export function Location() {
   return (
     <section className="py-24 md:py-32 bg-white relative">
       <div className="container mx-auto px-6 md:px-12">
-        
+
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
-          
+
           {/* Infographic Content */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
@@ -47,7 +47,7 @@ export function Location() {
               <span>Localização</span>
             </div>
             <h2 className="text-4xl md:text-5xl font-medium text-gray-900 mb-6 leading-tight">
-              No bairro Velha,<br/> perto de tudo o que importa
+              No bairro Velha,<br /> perto de tudo o que importa
             </h2>
             <p className="text-gray-500 font-sans text-lg mb-6 max-w-lg">
               O Cipriani Tower fica na Rua Marechal Deodoro, 527, no bairro Velha — uma das regiões mais valorizadas de Blumenau, com fácil acesso ao centro, comércio, escolas e serviços.
@@ -59,7 +59,7 @@ export function Location() {
             <div className="space-y-8 relative">
               {/* Connecting line */}
               <div className="absolute left-6 top-6 bottom-6 w-px bg-gray-200 hidden md:block" />
-              
+
               {points.map((point, idx) => (
                 <div key={idx} className="flex items-start gap-6 relative z-10 group">
                   <div className="w-12 h-12 rounded-full bg-white border border-gray-200 flex items-center justify-center text-gray-900 shadow-sm group-hover:border-[#C4A57A] group-hover:text-[#C4A57A] transition-colors shrink-0">
@@ -77,7 +77,7 @@ export function Location() {
           </motion.div>
 
           {/* Image */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true, margin: "-100px" }}
@@ -86,9 +86,10 @@ export function Location() {
           >
             <div className="relative aspect-[4/5] w-full max-w-md mx-auto lg:max-w-none radius-mix-2 overflow-hidden shadow-xl">
               <Image
-                src="/images/VISTA EXTERNA 3.jpg"
+                src="/images/vista externa quadra gpt.png"
                 alt="Localização Cipriani Tower"
                 fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover"
               />
               <div className="absolute inset-0 bg-black/5 mix-blend-multiply" />

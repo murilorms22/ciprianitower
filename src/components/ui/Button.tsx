@@ -39,7 +39,13 @@ export function Button({
     <motion.button
       whileHover={{ scale: 1.02 }}
       whileTap={{ scale: 0.98 }}
-      onClick={openModal}
+      onClick={(e: React.MouseEvent<HTMLButtonElement>) => {
+        if (props.onClick) {
+          props.onClick(e);
+        } else if (props.type !== "submit") {
+          openModal();
+        }
+      }}
       className={cn(baseStyles, variants[variant], sizes[size], className)}
       {...props}
     >

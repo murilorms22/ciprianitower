@@ -14,12 +14,12 @@ import "swiper/css/effect-fade";
 
 export function Gallery() {
   const images = [
-    { src: "/images/CIPRIANI TOWER 2.jpg", alt: "Fachada" },
+    { src: "/images/VISTA EXTERNA GPT.png", alt: "Fachada", className: "scale-[1.25] origin-top" },
     { src: "/images/SALÃO DE FESTAS 3.jpg", alt: "Salão de Festas" },
     { src: "/images/SALÃO DE FESTAS.jpg", alt: "Salão de Festas" },
     { src: "/images/BRINQUEDOTECA 2.jpg", alt: "Brinquedoteca" },
-    { src: "/images/ACADEMIA.jpg", alt: "Piscina Noturna" },
-    { src: "/images/PISCINA NOTURNA.jpg", alt: "Academia" }
+    { src: "/images/PISCINA_NOTURNA_NOVA.jpg", alt: "Piscina Noturna" },
+    { src: "/images/ACADEMIA_NOVA.jpg", alt: "Academia" }
   ];
 
   return (
@@ -68,17 +68,18 @@ export function Gallery() {
             <SwiperSlide key={idx} className="transition-transform duration-500">
               {({ isActive }) => (
                 <div
-                  className={`relative aspect-[16/10] md:aspect-[21/9] w-full rounded-3xl overflow-hidden transition-all duration-700 ease-out ${isActive ? "scale-100 opacity-100 shadow-2xl" : "scale-95 opacity-60"
+                  className={`relative aspect-[4/5] md:aspect-[4/3] w-full rounded-3xl overflow-hidden transition-all duration-700 ease-out ${isActive ? "scale-100 opacity-100 shadow-2xl" : "scale-95 opacity-60"
                     }`}
                 >
                   <Image
                     src={img.src}
                     alt={img.alt}
                     fill
-                    className="object-cover"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 75vw, 40vw"
+                    className={`object-cover ${img.className || ""}`}
                   />
                   {isActive && (
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-8">
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex items-end p-8">
                       <p className="text-white text-xl font-medium tracking-wide">{img.alt}</p>
                     </div>
                   )}
@@ -103,14 +104,15 @@ export function Gallery() {
           .gallery-swiper .swiper-button-prev {
             color: #1A1A1A;
             background: white;
-            width: 50px;
-            height: 50px;
+            width: 36px;
+            height: 36px;
             border-radius: 50%;
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
           }
           .gallery-swiper .swiper-button-next:after,
           .gallery-swiper .swiper-button-prev:after {
-            font-size: 20px;
+            font-size: 14px;
+            font-weight: bold;
           }
         `}</style>
       </div>

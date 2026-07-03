@@ -13,15 +13,39 @@ export function LeadModal() {
     telefone: "",
     momento: "Apenas pesquisando",
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [showOverlay, setShowOverlay] = useState(false);
+  const [error, setError] = useState("");
+
+  const formatPhone = (val: string) => {
+    const raw = val.replace(/\D/g, "").slice(0, 11);
+    let formatted = raw;
+    if (raw.length > 2) formatted = `(${raw.slice(0, 2)}) ${raw.slice(2)}`;
+    if (raw.length > 7) formatted = `(${raw.slice(0, 2)}) ${raw.slice(2, 7)}-${raw.slice(7)}`;
+    return formatted;
+  };
+
+  const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setFormData({ ...formData, telefone: formatPhone(e.target.value) });
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Mensagem pre-formatada para o WhatsApp
-    const mensagem = `Olá! Gostaria de agendar uma visita para o Cipriani Tower. Meu nome é ${formData.nome}.`;
-    const whatsappUrl = `https://wa.me/5547996744444?text=${encodeURIComponent(mensagem)}`;
-    
-    // Redireciona imediatamente
-    window.location.href = whatsappUrl;
+    setError("");
+
+    if (formData.telefone.replace(/\D/g, "").length < 10) {
+      setError("Digite um número de telefone válido com DDD.");
+      return;
+    }
+
+    setIsSubmitting(true);
+    setShowOverlay(true);
+
+    setTimeout(() => {
+      const mensagem = `Olá! Gostaria de agendar uma visita para o Cipriani Tower. Meu nome é ${formData.nome}.`;
+      const whatsappUrl = `https://wa.me/5547996744444?text=${encodeURIComponent(mensagem)}`;
+      window.location.href = whatsappUrl;
+    }, 2000);
   };
 
   return (
@@ -66,6 +90,7 @@ export function LeadModal() {
                   <input
                     required
                     type="text"
+                    maxLength={50}
                     value={formData.nome}
                     onChange={(e) => setFormData({ ...formData, nome: e.target.value })}
                     className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#C4A57A] focus:border-transparent transition-all"
@@ -95,7 +120,7 @@ export function LeadModal() {
                       required
                       type="tel"
                       value={formData.telefone}
-                      onChange={(e) => setFormData({ ...formData, telefone: e.target.value })}
+                      onChange={handlePhoneChange}
                       className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#C4A57A] focus:border-transparent transition-all"
                       placeholder="(00) 00000-0000"
                     />
@@ -117,15 +142,46 @@ export function LeadModal() {
                   </select>
                 </div>
 
+                {error && <p className="text-red-500 text-sm">{error}</p>}
+
                 <button
                   type="submit"
-                  className="w-full bg-[#1A1A1A] text-white rounded-xl py-4 font-medium hover:bg-[#333333] transition-colors mt-4 shadow-lg"
+                  disabled={isSubmitting}
+                  className="w-full bg-[#1A1A1A] text-white rounded-xl py-4 font-medium hover:bg-[#333333] transition-colors mt-4 shadow-lg disabled:opacity-70"
                 >
-                  Continuar para o WhatsApp
+                  {isSubmitting ? "Redirecionando..." : "Continuar para o WhatsApp"}
                 </button>
               </form>
             </div>
           </motion.div>
+          
+          {/* Overlay Escuro com Animação para o Redirecionamento (Fica por cima de tudo) */}
+          <AnimatePresence>
+            {showOverlay && (
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                className="fixed inset-0 z-[60] bg-[#1A1A1A] flex flex-col items-center justify-center p-6 text-center"
+              >
+                <motion.div
+                  initial={{ scale: 0.9, opacity: 0 }}
+                  animate={{ scale: 1, opacity: 1 }}
+                  transition={{ delay: 0.2 }}
+                >
+                  <h2 className="text-4xl md:text-5xl font-medium text-white mb-6">
+                    Ótima escolha, {formData.nome.split(" ")[0]}!
+                  </h2>
+                  <p className="text-xl text-gray-400 font-sans max-w-md mx-auto leading-relaxed">
+                    Aguarde, conectando você ao atendimento exclusivo...
+                  </p>
+
+                  <div className="mt-12 flex justify-center">
+                    <div className="w-12 h-12 border-4 border-[#C4A57A]/30 border-t-[#C4A57A] rounded-full animate-spin" />
+                  </div>
+                </motion.div>
+              </motion.div>
+            )}
+          </AnimatePresence>
         </>
       )}
     </AnimatePresence>

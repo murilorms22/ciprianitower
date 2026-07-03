@@ -48,9 +48,10 @@ export function Amenities() {
           {/* Bento Item 1: Piscina (Large) */}
           <motion.div variants={itemVariants} className="md:col-span-2 lg:col-span-2 row-span-2 relative group overflow-hidden radius-mix-1">
             <Image 
-              src="/images/PISCINA EXTERNA DIA.jpeg" 
+              src="/images/PISCINA_NOTURNA_NOVA.jpg" 
               alt="Piscina Aquecida" 
               fill 
+              sizes="(max-width: 768px) 100vw, (max-width: 1024px) 66vw, 50vw"
               className="object-cover transition-transform duration-[10s] group-hover:scale-110"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
@@ -75,9 +76,10 @@ export function Amenities() {
           {/* Bento Item 3: Academia */}
           <motion.div variants={itemVariants} className="relative group overflow-hidden rounded-3xl">
             <Image 
-              src="/images/ACADEMIA.jpg" 
+              src="/images/ACADEMIA_NOVA.jpg" 
               alt="Espaço Fitness" 
               fill 
+              sizes="(max-width: 768px) 100vw, 33vw"
               className="object-cover transition-transform duration-[10s] group-hover:scale-110"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
@@ -92,6 +94,7 @@ export function Amenities() {
               src="/images/CINEMA 2.jpg" 
               alt="Cinema" 
               fill 
+              sizes="(max-width: 768px) 100vw, 33vw"
               className="object-cover transition-transform duration-[10s] group-hover:scale-110"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />

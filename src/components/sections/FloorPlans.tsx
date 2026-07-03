@@ -70,6 +70,7 @@ export function FloorPlans() {
                   src={plan.img}
                   alt={`Planta ${plan.area}`}
                   fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   className="object-contain mix-blend-multiply group-hover:scale-[1.02] transition-transform duration-700"
                 />
               </div>

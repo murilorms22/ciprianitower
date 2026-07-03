@@ -6,7 +6,9 @@ export function Footer() {
       <div className="container mx-auto px-6 md:px-12">
         <div className="flex flex-col md:flex-row justify-between items-center gap-12 border-b border-white/10 pb-16">
           <div className="text-center md:text-left space-y-4 max-w-sm">
-            <h2 className="text-3xl font-medium">Cipriani Tower</h2>
+            <h2 className="font-semibold tracking-widest uppercase text-white text-3xl">
+              Cipriani <span className="font-light">Tower</span>
+            </h2>
             <p className="text-gray-400 font-sans">
               Rua Marechal Deodoro, 527<br/>
               Bairro Velha — Blumenau/SC
