@@ -1,0 +1,48 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-premium-gold: #C4A57A;
+  --color-premium-gold-hover: #B39366;
+  --color-premium-dark: #1A1A1A;
+  --color-premium-light: #F9F9F9;
+}
+
+/* Base colors */
+:root {
+  --background: #ffffff;
+  --foreground: #222222;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Forçando light theme como default visual para LP de empreendimento, mas mantendo suporte se necessário */
+    --background: #fdfdfd;
+    --foreground: #222222;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+  overflow-x: hidden; /* Previne scroll horizontal em animações */
+}
+
+@layer utilities {
+  .radius-mix-1 {
+    border-radius: 0 40px 0 40px;
+  }
+  
+  .radius-mix-2 {
+    border-radius: 40px 0 40px 0;
+  }
+  
+  .glassmorphism {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  }
+}

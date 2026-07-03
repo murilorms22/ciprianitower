@@ -1,0 +1,96 @@
+"use client";
+
+import { motion } from "framer-motion";
+import Image from "next/image";
+import { Button } from "@/components/ui/Button";
+
+export function FloorPlans() {
+  const plans = [
+    {
+      title: "Final 01 e 02",
+      area: "86,46m²",
+      features: ["2 suítes", "1 vaga dupla", "Sacada gourmet", "Opção de depósito"],
+      img: "/images/PLANTA BAIXA 5 AO 16 PVTO.jpg"
+    },
+    {
+      title: "Final 03 e 04",
+      area: "86,35m²",
+      features: ["2 suítes", "1 vaga dupla", "Sacada gourmet", "Opção de depósito"],
+      img: "/images/PLANTA BAIXA 5 AO 16 PVTO.jpg" // Usando o render geral
+    },
+    {
+      title: "Final 05 e 06",
+      area: "84,00m²",
+      features: ["2 suítes", "1 vaga dupla", "Sacada gourmet", "Opção de depósito"],
+      img: "/images/PLANTA BAIXA 5 AO 16 PVTO.jpg"
+    }
+  ];
+
+  return (
+    <section className="py-24 md:py-32 bg-[#F9F9F9]">
+      <div className="container mx-auto px-6 md:px-12">
+        
+        <div className="text-center max-w-3xl mx-auto mb-20">
+          <motion.h2 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-4xl md:text-5xl font-medium text-gray-900 mb-6"
+          >
+            Plantas — Escolha a melhor opção para você
+          </motion.h2>
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="text-gray-500 font-sans text-lg"
+          >
+            2 suítes em todas as opções, de 84 a 86 m², pensadas para conforto, privacidade e alto padrão.
+          </motion.p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {plans.map((plan, idx) => (
+            <motion.div
+              key={idx}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: idx * 0.1 }}
+              className="bg-white rounded-3xl p-8 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 group flex flex-col"
+            >
+              <div className="mb-8">
+                <p className="text-gray-400 text-sm font-medium tracking-widest uppercase mb-2">{plan.title}</p>
+                <h3 className="text-5xl font-medium text-[#1A1A1A]">{plan.area}</h3>
+              </div>
+
+              <div className="relative aspect-[3/4] w-full mb-8 rounded-2xl overflow-hidden bg-gray-50 p-4">
+                <Image 
+                  src={plan.img}
+                  alt={`Planta ${plan.area}`}
+                  fill
+                  className="object-contain mix-blend-multiply group-hover:scale-[1.02] transition-transform duration-700"
+                />
+              </div>
+
+              <ul className="space-y-3 mb-8 flex-grow">
+                {plan.features.map((feature, i) => (
+                  <li key={i} className="flex items-center text-gray-600 font-sans text-sm">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#C4A57A] mr-3" />
+                    {feature}
+                  </li>
+                ))}
+              </ul>
+
+              <Button variant="outline" className="w-full group-hover:bg-[#C4A57A] group-hover:text-white transition-colors">
+                Agendar visita
+              </Button>
+            </motion.div>
+          ))}
+        </div>
+
+      </div>
+    </section>
+  );
+}
