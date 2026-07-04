@@ -10,19 +10,19 @@ export function FloorPlans() {
       title: "Final 01 e 02",
       area: "86,46m²",
       features: ["2 suítes", "1 vaga dupla", "Sacada gourmet", "Opção de depósito"],
-      img: "/images/PLANTA BAIXA 5 AO 16 PVTO.jpg"
+      img: "/images/ap-8646.png"
     },
     {
       title: "Final 03 e 04",
       area: "86,35m²",
       features: ["2 suítes", "1 vaga dupla", "Sacada gourmet", "Opção de depósito"],
-      img: "/images/PLANTA BAIXA 5 AO 16 PVTO.jpg" // Usando o render geral
+      img: "/images/ap8635.png"
     },
     {
       title: "Final 05 e 06",
       area: "84,00m²",
       features: ["2 suítes", "1 vaga dupla", "Sacada gourmet", "Opção de depósito"],
-      img: "/images/PLANTA BAIXA 5 AO 16 PVTO.jpg"
+      img: "/images/ap-8400.png"
     }
   ];
 

@@ -12,13 +12,14 @@ export function Hero() {
       <section className="relative min-h-screen flex items-center bg-[#1A1A1A] overflow-hidden">
 
         {/* Background Image - Último terço direito no desktop */}
-        <div className="absolute inset-y-0 right-0 w-full lg:w-1/2 z-0">
+        <div className="absolute inset-y-0 right-0 w-full lg:w-2/3 z-0">
           <Image
             src="/images/VISTA EXTERNA GPT.png"
             alt="Cipriani Tower Fachada"
             fill
+            quality={100}
             sizes="(max-width: 1024px) 100vw, 50vw"
-            className="object-cover opacity-30 lg:opacity-100 object-[60%_center]"
+            className="object-cover opacity-30 lg:opacity-100 object-[20%_center]"
             priority
           />
           {/* Gradiente para mesclar a imagem com o fundo preto (esq para dir) */}
@@ -36,12 +37,12 @@ export function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] font-medium text-white leading-[1.1] tracking-tight mb-8 max-w-4xl">
-                Viva a experiência de morar em uma das melhores localizações de Blumenau, com duas suítes e acabamento de alto padrão
+              <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] font-medium text-white leading-[1.1] tracking-tight mb-8 max-w-3xl">
+                Viva a experiência de morar em uma das melhores localizações de Blumenau
               </h1>
-              
+
               <p className="text-lg md:text-xl text-gray-300 font-sans leading-relaxed mb-8 max-w-2xl">
-                Cipriani Tower — apartamentos de 84 a 86 m², 2 suítes, vaga dupla de garagem e lazer completo, no bairro Velha. Últimas unidades, direto com a construtora.
+                Cipriani Tower — apartamentos de alto padrão, de 84 a 86 m², 2 suítes, vaga dupla de garagem e lazer completo, no bairro Velha. Últimas unidades, direto com a construtora.
               </p>
 
               <ul className="space-y-3 mb-10">
@@ -51,7 +52,7 @@ export function Hero() {
                   "Localização nobre no bairro Velha, Blumenau/SC",
                   "Últimas unidades — direto com a construtora"
                 ].map((item, idx) => (
-                  <motion.li 
+                  <motion.li
                     key={idx}
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
