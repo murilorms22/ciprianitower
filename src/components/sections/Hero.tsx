@@ -1,86 +1,95 @@
 "use client";
 
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { Button } from "@/components/ui/Button";
 import Image from "next/image";
 import { Check } from "lucide-react";
 
 export function Hero() {
   return (
-    <>
-      <section className="relative min-h-screen flex items-center bg-[#1A1A1A] overflow-hidden">
+    <section className="relative h-screen min-h-[650px] w-full flex items-center overflow-hidden bg-[#1A1A1A]">
 
-        {/* Background Image - Último terço direito no desktop */}
-        <div className="absolute inset-y-0 right-0 w-full lg:w-2/3 z-0">
-          <Image
-            src="/images/VISTA EXTERNA GPT.png"
-            alt="Cipriani Tower Fachada"
-            fill
-            quality={100}
-            sizes="(max-width: 1024px) 100vw, 50vw"
-            className="object-cover opacity-30 lg:opacity-100 object-[20%_center]"
-            priority
-            loading="eager"
-          />
-          {/* Gradiente para mesclar a imagem com o fundo preto (esq para dir) */}
-          <div className="hidden lg:block absolute inset-0 bg-gradient-to-r from-[#1A1A1A] via-[#1A1A1A]/80 to-transparent" />
-          {/* Overlay escuro pro mobile */}
-          <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/50 to-black/90 lg:hidden" />
-        </div>
+      {/* Full Background Image */}
+      <div className="absolute inset-0 z-0">
+        <Image
+          src="/images/imagem-hero2.png"
+          alt="Cipriani Tower Fachada"
+          fill
+          quality={100}
+          className="object-cover"
+          priority
+          loading="eager"
+        />
+        {/* Overlay to ensure text readability */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/60 to-transparent" />
+        <div className="absolute inset-0 bg-black/30 md:hidden" /> {/* Extra darkening for mobile */}
+      </div>
 
-        <div className="container mx-auto px-6 md:px-12 relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 pt-28 pb-12">
+      <div className="container mx-auto px-6 relative z-10 h-full flex flex-col justify-center">
 
-          {/* Text Content */}
-          <div className="lg:col-span-8 flex flex-col justify-center">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-            >
-              <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] font-medium text-white leading-[1.1] tracking-tight mb-8 max-w-3xl">
-                Viva a experiência de morar em uma das melhores localizações de Blumenau
-              </h1>
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="max-w-3xl flex flex-col space-y-6 mt-16 md:mt-20"
+        >
+          {/* Eyebrow */}
+          <span className="text-[#C4A57A] uppercase tracking-[0.2em] text-xs md:text-sm font-extrabold">
+            Últimas unidades — direto com a construtora
+          </span>
 
-              <p className="text-lg md:text-xl text-gray-300 font-sans leading-relaxed mb-8 max-w-2xl">
-                Cipriani Tower — apartamentos de alto padrão, de 84 a 86 m², 2 suítes, vaga dupla de garagem e lazer completo, no bairro Velha. Últimas unidades, direto com a construtora.
-              </p>
+          {/* Title */}
+          <h1 className="text-4xl md:text-5xl lg:text-[4rem] font-bold text-white leading-[1.1] tracking-tight">
+            Viva a experiência de morar em uma das <span className="text-[#C4A57A]">melhores localizações</span> de Blumenau
+          </h1>
 
-              <ul className="space-y-3 mb-10">
-                {[
-                  "1 vaga dupla de garagem + opção de depósito",
-                  "Lazer completo: piscina aquecida, cinema, fitness e mais",
-                  "Localização nobre no bairro Velha, Blumenau/SC",
-                  "Últimas unidades — direto com a construtora"
-                ].map((item, idx) => (
-                  <motion.li
-                    key={idx}
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.5, delay: 0.5 + (idx * 0.1) }}
-                    className="flex items-start text-gray-200 font-sans text-sm md:text-base"
-                  >
-                    <span className="mt-0.5 mr-3 flex-shrink-0 bg-[#C4A57A]/20 p-1 rounded-full text-[#C4A57A]">
-                      <Check className="w-3 h-3" strokeWidth={3} />
-                    </span>
-                    <span>{item}</span>
-                  </motion.li>
-                ))}
-              </ul>
+          {/* Paragraph */}
+          <p className="text-base md:text-xl text-gray-200 font-semibold leading-relaxed max-w-2xl">
+            Cipriani Tower — apartamentos de <span className="text-white font-bold">alto padrão</span>, de 84 a 86 m², 2 suítes, vaga dupla de garagem e lazer completo, no bairro Velha.
+          </p>
 
-              <div className="flex flex-col sm:flex-row items-center gap-6 mt-8">
-                <Button size="lg" className="w-full sm:w-auto">
-                  Agendar minha visita
-                </Button>
-                <p className="text-sm text-gray-400 font-sans max-w-[200px] text-center sm:text-left">
-                  Atendimento direto com a equipe de vendas.
-                </p>
-              </div>
-
-            </motion.div>
+          {/* Features Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-2 w-full">
+            {[
+              "1 vaga dupla de garagem + opção de depósito",
+              "Lazer completo: piscina aquecida, cinema e mais",
+              "Localização nobre no bairro Velha, Blumenau/SC",
+              "Últimas unidades — direto com a construtora"
+            ].map((item, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: 0.4 + (idx * 0.1) }}
+                className="flex items-center space-x-3 bg-black/40 backdrop-blur-md p-3 md:p-4 rounded-xl border border-white/10"
+              >
+                <div className="flex-shrink-0 bg-[#C4A57A] p-1 md:p-1.5 rounded-full text-white shadow-lg">
+                  <Check className="w-3 h-3 md:w-4 md:h-4" strokeWidth={4} />
+                </div>
+                <span className="text-white font-bold text-xs md:text-sm leading-tight">
+                  {item}
+                </span>
+              </motion.div>
+            ))}
           </div>
-        </div>
-      </section>
-    </>
+
+          {/* CTA */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.8 }}
+            className="flex flex-col sm:flex-row items-center gap-6 pt-4"
+          >
+            <Button size="lg" className="w-full sm:w-auto px-8 py-6 text-sm md:text-base font-extrabold tracking-widest uppercase bg-[#C4A57A] hover:bg-[#b0936a] text-white shadow-xl shadow-black/20 transition-all hover:-translate-y-1">
+              Agendar minha visita
+            </Button>
+            <p className="text-xs md:text-sm font-bold text-gray-300 tracking-wider uppercase text-center sm:text-left">
+              Atendimento direto<br />com a equipe de vendas
+            </p>
+          </motion.div>
+
+        </motion.div>
+      </div>
+    </section>
   );
 }
