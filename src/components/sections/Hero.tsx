@@ -21,6 +21,7 @@ export function Hero() {
             sizes="(max-width: 1024px) 100vw, 50vw"
             className="object-cover opacity-30 lg:opacity-100 object-[20%_center]"
             priority
+            loading="eager"
           />
           {/* Gradiente para mesclar a imagem com o fundo preto (esq para dir) */}
           <div className="hidden lg:block absolute inset-0 bg-gradient-to-r from-[#1A1A1A] via-[#1A1A1A]/80 to-transparent" />
