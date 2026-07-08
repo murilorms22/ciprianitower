@@ -19,7 +19,7 @@ export function Hero() {
           alt="Cipriani Tower Fachada"
           fill
           quality={100}
-          className="object-cover object-right md:object-center"
+          className="object-cover object-[75%_center] md:object-center"
           priority
           loading="eager"
         />
