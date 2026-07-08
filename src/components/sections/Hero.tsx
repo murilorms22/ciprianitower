@@ -1,29 +1,32 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { Button } from "@/components/ui/Button";
 import Image from "next/image";
 import { Check } from "lucide-react";
 
 export function Hero() {
+  const { scrollY } = useScroll();
+  const y = useTransform(scrollY, [0, 1000], [0, 300]);
+
   return (
     <section className="relative h-screen min-h-[650px] w-full flex items-center overflow-hidden bg-[#1A1A1A]">
 
       {/* Full Background Image */}
-      <div className="absolute inset-0 z-0">
+      <motion.div className="absolute inset-0 z-0 scale-105" style={{ y }}>
         <Image
           src="/images/imagem-hero2.png"
           alt="Cipriani Tower Fachada"
           fill
           quality={100}
-          className="object-cover"
+          className="object-cover object-right md:object-center"
           priority
           loading="eager"
         />
         {/* Overlay to ensure text readability */}
         <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/60 to-transparent" />
         <div className="absolute inset-0 bg-black/30 md:hidden" /> {/* Extra darkening for mobile */}
-      </div>
+      </motion.div>
 
       <div className="container mx-auto px-6 relative z-10 h-full flex flex-col justify-center">
 

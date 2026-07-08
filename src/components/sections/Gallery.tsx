@@ -14,7 +14,7 @@ import "swiper/css/effect-fade";
 
 export function Gallery() {
   const images = [
-    { src: "/images/VISTA EXTERNA GPT.png", alt: "Fachada", className: "scale-[1.25] origin-top" },
+    { src: "/images/imagem-fachada.png", alt: "Fachada", className: "scale-[1.25] origin-top" },
     { src: "/images/SALÃO DE FESTAS 3.jpg", alt: "Salão de Festas" },
     { src: "/images/SALÃO DE FESTAS.jpg", alt: "Salão de Festas" },
     { src: "/images/BRINQUEDOTECA 2.jpg", alt: "Brinquedoteca" },
@@ -104,14 +104,26 @@ export function Gallery() {
           .gallery-swiper .swiper-button-prev {
             color: #1A1A1A;
             background: white;
-            width: 36px;
-            height: 36px;
+            padding: 10px;
+            width: 44px;
+            height: 44px;
             border-radius: 50%;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            z-index: 20;
+            top: 45%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+          .gallery-swiper .swiper-button-prev {
+            left: 10px;
+          }
+          .gallery-swiper .swiper-button-next {
+            right: 10px;
           }
           .gallery-swiper .swiper-button-next:after,
           .gallery-swiper .swiper-button-prev:after {
-            font-size: 14px;
+            font-size: 16px;
             font-weight: bold;
           }
         `}</style>
