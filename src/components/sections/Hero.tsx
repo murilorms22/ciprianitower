@@ -3,7 +3,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Button } from "@/components/ui/Button";
 import Image from "next/image";
-import { Check } from "lucide-react";
+import { Car, Sparkles, MapPin, Key } from "lucide-react";
 
 export function Hero() {
   const { scrollY } = useScroll();
@@ -34,7 +34,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="max-w-3xl flex flex-col space-y-6 mt-16 md:mt-20"
+          className="max-w-3xl flex flex-col space-y-6 pt-28 md:pt-32 lg:scale-[0.75] 2xl:scale-100 lg:origin-left"
         >
           {/* Eyebrow */}
           <span className="text-[#C4A57A] uppercase tracking-[0.2em] text-xs md:text-sm font-extrabold">
@@ -46,31 +46,27 @@ export function Hero() {
             Viva a experiência de morar em uma das <span className="text-[#C4A57A]">melhores localizações</span> de Blumenau
           </h1>
 
-          {/* Paragraph */}
-          <p className="text-base md:text-xl text-gray-200 font-semibold leading-relaxed max-w-2xl">
-            Cipriani Tower — apartamentos de <span className="text-white font-bold">alto padrão</span>, de 84 a 86 m², 2 suítes, vaga dupla de garagem e lazer completo, no bairro Velha.
-          </p>
-
           {/* Features Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-2 w-full">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8 w-full">
             {[
-              "1 vaga dupla de garagem + opção de depósito",
-              "Lazer completo: piscina aquecida, cinema e mais",
-              "Localização nobre no bairro Velha, Blumenau/SC",
-              "Últimas unidades — direto com a construtora"
+              { text: "1 vaga dupla de garagem + opção de depósito", icon: Car },
+              { text: "Lazer completo: piscina aquecida, cinema e mais", icon: Sparkles },
+              { text: "Localização nobre no bairro Velha, Blumenau/SC", icon: MapPin },
+              { text: "Últimas unidades — direto com a construtora", icon: Key, className: "hidden md:flex" }
             ].map((item, idx) => (
               <motion.div
                 key={idx}
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6, delay: 0.4 + (idx * 0.1) }}
-                className="flex items-center space-x-3 bg-black/40 backdrop-blur-md p-3 md:p-4 rounded-xl border border-white/10"
+                className={`flex items-center space-x-4 bg-black/40 backdrop-blur-md p-4 rounded-xl border border-white/10 ${item.className || ""}`}
               >
-                <div className="flex-shrink-0 bg-[#C4A57A] p-1 md:p-1.5 rounded-full text-white shadow-lg">
-                  <Check className="w-3 h-3 md:w-4 md:h-4" strokeWidth={4} />
+                <div className="flex-shrink-0 text-white">
+                  <item.icon className="w-5 h-5 md:w-6 md:h-6" strokeWidth={2} />
                 </div>
+                <div className="h-8 w-[2px] bg-[#C4A57A] rounded-full" />
                 <span className="text-white font-bold text-xs md:text-sm leading-tight">
-                  {item}
+                  {item.text}
                 </span>
               </motion.div>
             ))}
