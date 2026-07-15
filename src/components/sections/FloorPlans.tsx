@@ -21,22 +21,28 @@ export function FloorPlans() {
 
   const plans = [
     {
-      title: "Final 01 e 02",
-      area: "86,46m²",
-      features: ["2 suítes", "1 vaga dupla", "Sacada gourmet", "Opção de depósito"],
-      img: "/images/ap-8646.png"
+      title: "Planta 4",
+      area: "84,00m²",
+      features: ["1 vaga dupla", "Sacada gourmet", "Opção de depósito"],
+      img: "/images/ap-8400.png"
     },
     {
-      title: "Final 03 e 04",
+      title: "Planta 2",
       area: "86,35m²",
-      features: ["2 suítes", "1 vaga dupla", "Sacada gourmet", "Opção de depósito"],
+      features: ["1 vaga dupla", "Sacada gourmet", "Opção de depósito"],
       img: "/images/ap8635.png"
     },
     {
-      title: "Final 05 e 06",
-      area: "84,00m²",
-      features: ["2 suítes", "1 vaga dupla", "Sacada gourmet", "Opção de depósito"],
-      img: "/images/ap-8400.png"
+      title: "Planta 1",
+      area: "86,46m²",
+      features: ["1 vaga dupla", "Sacada gourmet", "Opção de depósito"],
+      img: "/images/ap-8646.png"
+    },
+    {
+      title: "Planta 3",
+      area: "104,68m²",
+      features: ["1 vaga dupla", "Sacada gourmet", "Opção de depósito"],
+      img: "/images/PLANTA BAIXA 5 AO 16 PVTO.jpg"
     }
   ];
 
@@ -60,11 +66,11 @@ export function FloorPlans() {
             transition={{ delay: 0.1 }}
             className="text-gray-500 font-sans text-lg"
           >
-            2 suítes em todas as opções, de 84 a 86 m², pensadas para conforto, privacidade e alto padrão.
+            Opções de 84 a 104 m², pensadas para conforto, privacidade e alto padrão.
           </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {plans.map((plan, idx) => (
             <motion.div
               key={idx}
@@ -87,11 +93,11 @@ export function FloorPlans() {
                   src={plan.img}
                   alt={`Planta ${plan.area}`}
                   fill
-                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
                   className="object-contain mix-blend-multiply group-hover:scale-[1.02] transition-transform duration-700"
                 />
-                <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/60 to-transparent flex items-end justify-center pb-4 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300">
-                  <div className="flex items-center text-white space-x-2">
+                <div className="absolute inset-x-0 bottom-0 h-16 flex items-end justify-center pb-4 translate-y-0 md:translate-y-full md:group-hover:translate-y-0 transition-transform duration-300">
+                  <div className="flex items-center text-gray-900 space-x-2">
                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
                     <span className="text-sm font-medium">Clique para ampliar a imagem</span>
                   </div>

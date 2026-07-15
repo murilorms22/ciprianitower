@@ -9,22 +9,22 @@ export function Location() {
     {
       icon: <HeartPulse className="w-5 h-5" />,
       title: "Saúde",
-      desc: "Hospital Santo Antônio e Hospital Santa Isabel"
+      desc: "Hospital Unimed e Hospital Santa Isabel"
     },
     {
       icon: <BookOpen className="w-5 h-5" />,
       title: "Educação",
-      desc: "FURB (Universidade Regional de Blumenau) e escolas do bairro (EBM Alberto Stein e EBM Bilíngue Profª. Helena Winckler)"
+      desc: "FURB (Universidade Regional de Blumenau) e UFSC (Universidade Federal de Santa Catarina)"
     },
     {
       icon: <Coffee className="w-5 h-5" />,
-      title: "Lazer e cultura",
-      desc: "Parque Vila Germânica (Oktoberfest) e o Centro histórico (Rua XV de Novembro)"
+      title: "Lazer e Cultura",
+      desc: "Parque Vila Germânica (Oktoberfest), Parque Ramiro e Teatro Carlos Gomes"
     },
     {
       icon: <ShoppingBag className="w-5 h-5" />,
-      title: "Compras e serviços",
-      desc: "Neumarkt Shopping, supermercados do bairro e Terminal Velha (transporte público)"
+      title: "Compras e Serviços",
+      desc: "Shopping Neumarkt, Angeloni Supermercado, Sam’s Club e Terminal Proeb (transporte público)"
     }
   ];
 
