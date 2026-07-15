@@ -9,7 +9,7 @@ export function Map() {
       <div className="container mx-auto px-6 md:px-12 relative z-10">
 
         <div className="bg-white p-8 md:p-12 rounded-[40px] shadow-2xl max-w-2xl mx-auto -mt-40 relative z-20 text-center flex flex-col items-center">
-          <div className="w-16 h-16 bg-[#F9F9F9] rounded-full flex items-center justify-center text-[#C4A57A] mb-6">
+          <div className="w-16 h-16 bg-[#F9F9F9] rounded-full flex items-center justify-center text-[#D96227] mb-6">
             <MapPin className="w-8 h-8" />
           </div>
           <h2 className="text-3xl md:text-4xl font-medium text-gray-900 mb-4">

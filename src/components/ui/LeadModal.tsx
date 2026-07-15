@@ -93,7 +93,7 @@ export function LeadModal() {
                     maxLength={50}
                     value={formData.nome}
                     onChange={(e) => setFormData({ ...formData, nome: e.target.value })}
-                    className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#C4A57A] focus:border-transparent transition-all"
+                    className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#D96227] focus:border-transparent transition-all"
                     placeholder="Seu nome"
                   />
                 </div>
@@ -108,7 +108,7 @@ export function LeadModal() {
                       type="email"
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#C4A57A] focus:border-transparent transition-all"
+                      className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#D96227] focus:border-transparent transition-all"
                       placeholder="seu@email.com"
                     />
                   </div>
@@ -121,7 +121,7 @@ export function LeadModal() {
                       type="tel"
                       value={formData.telefone}
                       onChange={handlePhoneChange}
-                      className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#C4A57A] focus:border-transparent transition-all"
+                      className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#D96227] focus:border-transparent transition-all"
                       placeholder="(00) 00000-0000"
                     />
                   </div>
@@ -134,7 +134,7 @@ export function LeadModal() {
                   <select
                     value={formData.momento}
                     onChange={(e) => setFormData({ ...formData, momento: e.target.value })}
-                    className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#C4A57A] focus:border-transparent transition-all bg-white"
+                    className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#D96227] focus:border-transparent transition-all bg-white"
                   >
                     <option>Apenas pesquisando</option>
                     <option>Pretendo decidir nos próximos 30 dias</option>
@@ -176,7 +176,7 @@ export function LeadModal() {
                   </p>
 
                   <div className="mt-12 flex justify-center">
-                    <div className="w-12 h-12 border-4 border-[#C4A57A]/30 border-t-[#C4A57A] rounded-full animate-spin" />
+                    <div className="w-12 h-12 border-4 border-[#D96227]/30 border-t-[#D96227] rounded-full animate-spin" />
                   </div>
                 </motion.div>
               </motion.div>

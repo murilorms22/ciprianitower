@@ -107,13 +107,13 @@ export function FloorPlans() {
               <ul className="space-y-3 mb-8 flex-grow">
                 {plan.features.map((feature, i) => (
                   <li key={i} className="flex items-center text-gray-600 font-sans text-sm">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#C4A57A] mr-3" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#D96227] mr-3" />
                     {feature}
                   </li>
                 ))}
               </ul>
 
-              <Button variant="outline" className="w-full group-hover:bg-[#C4A57A] group-hover:text-white transition-colors">
+              <Button variant="outline" className="w-full group-hover:bg-[#D96227] group-hover:text-white transition-colors">
                 Agendar visita
               </Button>
             </motion.div>

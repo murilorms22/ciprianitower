@@ -37,13 +37,13 @@ export function Hero() {
           className="max-w-3xl flex flex-col space-y-6 pt-28 md:pt-32 lg:scale-[0.75] 2xl:scale-100 lg:origin-left"
         >
           {/* Eyebrow */}
-          <span className="text-[#C4A57A] uppercase tracking-[0.2em] text-xs md:text-sm font-extrabold">
+          <span className="text-[#D96227] uppercase tracking-[0.2em] text-xs md:text-sm font-extrabold">
             Últimas unidades — direto com a construtora
           </span>
 
           {/* Title */}
           <h1 className="text-4xl md:text-5xl lg:text-[4rem] font-bold text-white leading-[1.1] tracking-tight">
-            Viva a experiência de morar em uma das <span className="text-[#C4A57A]">melhores localizações</span> de Blumenau
+            Viva a experiência de morar em uma das <span className="text-[#D96227]">melhores localizações</span> de Blumenau
           </h1>
 
           {/* Features Grid */}
@@ -64,7 +64,7 @@ export function Hero() {
                 <div className="flex-shrink-0 text-white">
                   <item.icon className="w-5 h-5 md:w-6 md:h-6" strokeWidth={2} />
                 </div>
-                <div className="h-8 w-[2px] bg-[#C4A57A] rounded-full" />
+                <div className="h-8 w-[2px] bg-[#D96227] rounded-full" />
                 <span className="text-white font-bold text-xs md:text-sm leading-tight">
                   {item.text}
                 </span>
@@ -79,7 +79,7 @@ export function Hero() {
             transition={{ duration: 0.8, delay: 0.8 }}
             className="flex flex-col sm:flex-row items-center gap-6 pt-4"
           >
-            <Button size="lg" className="w-full sm:w-auto px-8 py-6 text-sm md:text-base font-extrabold tracking-widest uppercase bg-[#C4A57A] hover:bg-[#b0936a] text-white shadow-xl shadow-black/20 transition-all hover:-translate-y-1">
+            <Button size="lg" className="w-full sm:w-auto px-8 py-6 text-sm md:text-base font-extrabold tracking-widest uppercase bg-[#D96227] hover:bg-[#C2511A] text-white shadow-xl shadow-black/20 transition-all hover:-translate-y-1">
               Agendar minha visita
             </Button>
             <p className="text-xs md:text-sm font-bold text-gray-300 tracking-wider uppercase text-center sm:text-left">

@@ -42,7 +42,7 @@ export function Location() {
             transition={{ duration: 0.8 }}
             className="order-2 lg:order-1"
           >
-            <div className="flex items-center gap-3 text-[#C4A57A] mb-4 font-medium tracking-wide text-sm uppercase">
+            <div className="flex items-center gap-3 text-[#D96227] mb-4 font-medium tracking-wide text-sm uppercase">
               <MapPin className="w-5 h-5" />
               <span>Localização</span>
             </div>
@@ -62,7 +62,7 @@ export function Location() {
 
               {points.map((point, idx) => (
                 <div key={idx} className="flex items-start gap-6 relative z-10 group">
-                  <div className="w-12 h-12 rounded-full bg-white border border-gray-200 flex items-center justify-center text-gray-900 shadow-sm group-hover:border-[#C4A57A] group-hover:text-[#C4A57A] transition-colors shrink-0">
+                  <div className="w-12 h-12 rounded-full bg-white border border-gray-200 flex items-center justify-center text-gray-900 shadow-sm group-hover:border-[#D96227] group-hover:text-[#D96227] transition-colors shrink-0">
                     {point.icon}
                   </div>
                   <div className="pt-2">

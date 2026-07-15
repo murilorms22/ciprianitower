@@ -80,17 +80,17 @@ export function Amenities() {
           <motion.div variants={itemVariants} className="bg-[#F9F9F9] p-8 md:p-10 rounded-3xl border border-gray-100 flex flex-col justify-center row-span-2">
             <h3 className="text-xl font-medium text-gray-900 mb-6">Infraestrutura</h3>
             <ul className="space-y-3 font-sans text-gray-600 text-sm">
-              <li className="flex items-center"><span className="w-1.5 h-1.5 rounded-full bg-[#C4A57A] mr-3 shrink-0" />Piscina adulto e infantil aquecida</li>
-              <li className="flex items-center"><span className="w-1.5 h-1.5 rounded-full bg-[#C4A57A] mr-3 shrink-0" />Bar molhado</li>
-              <li className="flex items-center"><span className="w-1.5 h-1.5 rounded-full bg-[#C4A57A] mr-3 shrink-0" />Quadra Poliesportiva</li>
-              <li className="flex items-center"><span className="w-1.5 h-1.5 rounded-full bg-[#C4A57A] mr-3 shrink-0" />Playground</li>
-              <li className="flex items-center"><span className="w-1.5 h-1.5 rounded-full bg-[#C4A57A] mr-3 shrink-0" />Praça do fogo</li>
-              <li className="flex items-center"><span className="w-1.5 h-1.5 rounded-full bg-[#C4A57A] mr-3 shrink-0" />Espaço pet</li>
-              <li className="flex items-center"><span className="w-1.5 h-1.5 rounded-full bg-[#C4A57A] mr-3 shrink-0" />Cinema</li>
-              <li className="flex items-center"><span className="w-1.5 h-1.5 rounded-full bg-[#C4A57A] mr-3 shrink-0" />2 salões de festas</li>
-              <li className="flex items-center"><span className="w-1.5 h-1.5 rounded-full bg-[#C4A57A] mr-3 shrink-0" />Academia</li>
-              <li className="flex items-center"><span className="w-1.5 h-1.5 rounded-full bg-[#C4A57A] mr-3 shrink-0" />Sala de Jogos</li>
-              <li className="flex items-center"><span className="w-1.5 h-1.5 rounded-full bg-[#C4A57A] mr-3 shrink-0" />Brinquedoteca</li>
+              <li className="flex items-center"><span className="w-1.5 h-1.5 rounded-full bg-[#D96227] mr-3 shrink-0" />Piscina adulto e infantil aquecida</li>
+              <li className="flex items-center"><span className="w-1.5 h-1.5 rounded-full bg-[#D96227] mr-3 shrink-0" />Bar molhado</li>
+              <li className="flex items-center"><span className="w-1.5 h-1.5 rounded-full bg-[#D96227] mr-3 shrink-0" />Quadra Poliesportiva</li>
+              <li className="flex items-center"><span className="w-1.5 h-1.5 rounded-full bg-[#D96227] mr-3 shrink-0" />Playground</li>
+              <li className="flex items-center"><span className="w-1.5 h-1.5 rounded-full bg-[#D96227] mr-3 shrink-0" />Praça do fogo</li>
+              <li className="flex items-center"><span className="w-1.5 h-1.5 rounded-full bg-[#D96227] mr-3 shrink-0" />Espaço pet</li>
+              <li className="flex items-center"><span className="w-1.5 h-1.5 rounded-full bg-[#D96227] mr-3 shrink-0" />Cinema</li>
+              <li className="flex items-center"><span className="w-1.5 h-1.5 rounded-full bg-[#D96227] mr-3 shrink-0" />2 salões de festas</li>
+              <li className="flex items-center"><span className="w-1.5 h-1.5 rounded-full bg-[#D96227] mr-3 shrink-0" />Academia</li>
+              <li className="flex items-center"><span className="w-1.5 h-1.5 rounded-full bg-[#D96227] mr-3 shrink-0" />Sala de Jogos</li>
+              <li className="flex items-center"><span className="w-1.5 h-1.5 rounded-full bg-[#D96227] mr-3 shrink-0" />Brinquedoteca</li>
             </ul>
           </motion.div>
 
@@ -113,10 +113,10 @@ export function Amenities() {
           <motion.div variants={itemVariants} className="bg-[#1A1A1A] p-8 md:p-10 flex flex-col justify-center radius-mix-2 text-white">
             <h3 className="text-xl font-medium mb-4">Diferenciais do apartamento</h3>
             <ul className="space-y-3 font-sans text-gray-400 text-sm">
-              <li className="flex items-center"><span className="w-1.5 h-1.5 rounded-full bg-[#C4A57A] mr-3 shrink-0" />Vaga dupla de garagem</li>
-              <li className="flex items-center"><span className="w-1.5 h-1.5 rounded-full bg-[#C4A57A] mr-3 shrink-0" />Sacada gourmet</li>
-              <li className="flex items-center"><span className="w-1.5 h-1.5 rounded-full bg-[#C4A57A] mr-3 shrink-0" />Acabamento em porcelanato</li>
-              <li className="flex items-center"><span className="w-1.5 h-1.5 rounded-full bg-[#C4A57A] mr-3 shrink-0" />Andares altos, com vista para Blumenau</li>
+              <li className="flex items-center"><span className="w-1.5 h-1.5 rounded-full bg-[#D96227] mr-3 shrink-0" />Vaga dupla de garagem</li>
+              <li className="flex items-center"><span className="w-1.5 h-1.5 rounded-full bg-[#D96227] mr-3 shrink-0" />Sacada gourmet</li>
+              <li className="flex items-center"><span className="w-1.5 h-1.5 rounded-full bg-[#D96227] mr-3 shrink-0" />Acabamento em porcelanato</li>
+              <li className="flex items-center"><span className="w-1.5 h-1.5 rounded-full bg-[#D96227] mr-3 shrink-0" />Andares altos, com vista para Blumenau</li>
             </ul>
           </motion.div>
 

@@ -91,7 +91,7 @@ export function Gallery() {
 
         <style jsx global>{`
           .gallery-swiper .swiper-pagination-bullet {
-            background: #C4A57A;
+            background: #D96227;
             opacity: 0.5;
           }
           .gallery-swiper .swiper-pagination-bullet-active {
