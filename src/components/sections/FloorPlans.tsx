@@ -42,16 +42,16 @@ export function FloorPlans() {
       title: "Planta 3",
       area: "104,68m²",
       features: ["1 vaga dupla", "Sacada gourmet", "Opção de depósito"],
-      img: "/images/PLANTA BAIXA 5 AO 16 PVTO.jpg"
+      img: "/images/ap-10468.png"
     }
   ];
 
   return (
     <section className="py-24 md:py-32 bg-[#F9F9F9]">
       <div className="container mx-auto px-6 md:px-12">
-        
+
         <div className="text-center max-w-3xl mx-auto mb-20">
-          <motion.h2 
+          <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -59,7 +59,7 @@ export function FloorPlans() {
           >
             Plantas — Escolha a melhor opção para você
           </motion.h2>
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -85,11 +85,11 @@ export function FloorPlans() {
                 <h3 className="text-5xl font-medium text-[#1A1A1A]">{plan.area}</h3>
               </div>
 
-              <div 
+              <div
                 className="relative aspect-[3/4] w-full mb-8 rounded-2xl overflow-hidden bg-gray-50 p-4 cursor-pointer"
                 onClick={() => setSelectedImage(plan.img)}
               >
-                <Image 
+                <Image
                   src={plan.img}
                   alt={`Planta ${plan.area}`}
                   fill
@@ -98,7 +98,7 @@ export function FloorPlans() {
                 />
                 <div className="absolute inset-x-0 bottom-0 h-16 flex items-end justify-center pb-4 translate-y-0 md:translate-y-full md:group-hover:translate-y-0 transition-transform duration-300">
                   <div className="flex items-center text-gray-900 space-x-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" /></svg>
                     <span className="text-sm font-medium">Clique para ampliar a imagem</span>
                   </div>
                 </div>
@@ -124,18 +124,18 @@ export function FloorPlans() {
 
       {/* Modal de Imagem */}
       {selectedImage && (
-        <div 
+        <div
           className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm"
           onClick={() => setSelectedImage(null)}
         >
-          <button 
+          <button
             onClick={() => setSelectedImage(null)}
             className="absolute top-6 right-6 text-white hover:text-gray-300 transition-colors z-50 p-2"
           >
-            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" /></svg>
           </button>
           <div className="relative w-full max-w-5xl h-[85vh] flex items-center justify-center" onClick={(e) => e.stopPropagation()}>
-            <Image 
+            <Image
               src={selectedImage}
               alt="Planta ampliada"
               fill
