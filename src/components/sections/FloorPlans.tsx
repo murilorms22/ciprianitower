@@ -21,7 +21,7 @@ export function FloorPlans() {
 
   const plans = [
     {
-      title: "Planta 4",
+      title: "Planta 1",
       area: "84,00m²",
       features: ["1 vaga dupla", "Sacada gourmet", "Opção de depósito"],
       img: "/images/ap-8400.png"
@@ -33,13 +33,13 @@ export function FloorPlans() {
       img: "/images/ap8635.png"
     },
     {
-      title: "Planta 1",
+      title: "Planta 3",
       area: "86,46m²",
       features: ["1 vaga dupla", "Sacada gourmet", "Opção de depósito"],
       img: "/images/ap-8646.png"
     },
     {
-      title: "Planta 3",
+      title: "Planta 4",
       area: "104,68m²",
       features: ["1 vaga dupla", "Sacada gourmet", "Opção de depósito"],
       img: "/images/ap-10468.png"
