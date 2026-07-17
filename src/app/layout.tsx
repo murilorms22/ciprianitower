@@ -10,9 +10,6 @@ const outfit = Outfit({
 export const metadata: Metadata = {
   title: "Cipriani Tower | Empreendimento de Luxo no bairro Velha, Blumenau/SC",
   description: "Cipriani Tower — apartamentos de 84 a 86 m², 2 suítes, vaga dupla de garagem e lazer completo. Últimas unidades, direto com a construtora.",
-  icons: {
-    icon: "/logo-oma.png",
-  },
 };
 
 export default function RootLayout({
