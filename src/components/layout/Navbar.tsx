@@ -22,7 +22,7 @@ export function Navbar() {
     >
       <div className="container mx-auto px-6 md:px-12 flex items-center justify-between">
         <div className="flex-shrink-0">
-          <h1 className={`font-semibold tracking-widest uppercase transition-colors duration-300 ${scrolled ? "text-[#1A1A1A] text-xl" : "text-white text-2xl"
+          <h1 className={`font-semibold tracking-widest uppercase transition-colors duration-300 ${scrolled ? "text-[#1A1A1A] text-lg md:text-xl" : "text-white text-xl md:text-2xl"
             }`}>
             Cipriani <span className="font-light">Tower</span>
           </h1>
