@@ -3,14 +3,14 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Button } from "@/components/ui/Button";
 import Image from "next/image";
-import { Car, Sparkles, MapPin, Key } from "lucide-react";
+import { Car, Sparkles, MapPin, Key, DollarSign } from "lucide-react";
 
 export function Hero() {
   const { scrollY } = useScroll();
   const y = useTransform(scrollY, [0, 1000], [0, 300]);
 
   return (
-    <section className="relative h-screen min-h-[650px] w-full flex items-center overflow-hidden bg-[#1A1A1A]">
+    <section className="relative min-h-[100dvh] w-full flex items-center overflow-hidden bg-[#1A1A1A] pb-12 md:pb-0">
 
       {/* Full Background Image */}
       <motion.div className="absolute inset-0 z-0 scale-105" style={{ y }}>
@@ -38,7 +38,7 @@ export function Hero() {
         >
           {/* Eyebrow */}
           <span className="text-[#D96227] uppercase tracking-[0.2em] text-xs md:text-sm font-extrabold">
-            Últimas unidades — direto com a construtora
+            Últimas unidades
           </span>
 
           {/* Title */}
@@ -52,14 +52,14 @@ export function Hero() {
               { text: "1 vaga dupla de garagem + opção de depósito", icon: Car },
               { text: "Lazer completo: piscina aquecida, cinema e mais", icon: Sparkles },
               { text: "Localização nobre no bairro Velha, Blumenau/SC", icon: MapPin },
-              { text: "Últimas unidades — direto com a construtora", icon: Key, className: "hidden md:flex" }
+              { text: "Unidades a partir de R$912.000,00", icon: DollarSign, isPrice: true }
             ].map((item, idx) => (
               <motion.div
                 key={idx}
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6, delay: 0.4 + (idx * 0.1) }}
-                className={`flex items-center space-x-4 bg-black/40 backdrop-blur-md p-4 rounded-xl border border-white/10 ${item.className || ""}`}
+                className={`flex items-center space-x-4 bg-black/40 backdrop-blur-md p-4 rounded-xl border ${item.isPrice ? 'border-[#D96227]' : 'border-white/10'}`}
               >
                 <div className="flex-shrink-0 text-white">
                   <item.icon className="w-5 h-5 md:w-6 md:h-6" strokeWidth={2} />
