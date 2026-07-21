@@ -41,6 +41,32 @@ export function LeadModal() {
     setIsSubmitting(true);
     setShowOverlay(true);
 
+    // Coletar UTMs e parâmetros da URL atual
+    const searchParams = new URLSearchParams(window.location.search);
+    const payload = {
+      nome: formData.nome,
+      numero: formData.telefone,
+      mql: formData.momento,
+      utm_source: searchParams.get('utm_source') || '',
+      utm_medium: searchParams.get('utm_medium') || '',
+      utm_campaign: searchParams.get('utm_campaign') || '',
+      utm_content: searchParams.get('utm_content') || '',
+      utm_term: searchParams.get('utm_term') || '',
+      gclid: searchParams.get('gclid') || '',
+      fbclid: searchParams.get('fbclid') || '',
+      page_url: window.location.href
+    };
+
+    // Disparar Webhook para o Google Sheets (modo no-cors para evitar problemas de bloqueio de CORS do Google)
+    fetch("https://script.google.com/macros/s/AKfycbxcWqDtGQXQKlUsDqcIlrfJfLWnMZdDxtGTilJf2G0-9qJmgMrfvKIG9YKo6iO3anbe/exec", {
+      method: "POST",
+      mode: "no-cors",
+      headers: {
+        "Content-Type": "text/plain"
+      },
+      body: JSON.stringify(payload)
+    }).catch(err => console.error("Erro ao enviar webhook:", err));
+
     setTimeout(() => {
       const mensagem = `Olá! Gostaria de agendar uma visita para o Cipriani Tower. Meu nome é ${formData.nome}.`;
       const whatsappUrl = `https://wa.me/5547996744444?text=${encodeURIComponent(mensagem)}`;
